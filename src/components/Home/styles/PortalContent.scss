@@ -138,7 +138,8 @@
 
         .cp_container {
             transform: rotate(6deg);
-
+            height: fit-content;
+            text-align: center;
             .PortalContent__iframe {
                 border: 1rem solid white;
                 width: 90%;

@@ -10,6 +10,11 @@
     border: 1px solid var(--color-primary);
     height: fit-content;
     transition: var(--transition);
+    .service__list{
+        padding: 2rem;
+        text-align: justify;
+        color: white;
+    }
 }
 
 .service:hover {
@@ -30,11 +35,6 @@
     color: var(--color-bg);
     font-size: 1rem;
     text-align: center;
-}
-
-.service__list {
-    padding: 2rem;
-    text-align: justify;
 }
 
 .service__list li {
