@@ -6,7 +6,7 @@ import "./styles/skills.scss";
 import db_skill_front from "../../assets/data/SkillsFront.json";
 import db_skill_back from "../../assets/data/SkillsBack.json";
 import db_skill_devops from "../../assets/data/SkillsDevOps.json";
-import { Autoplay, Grid, Navigation, Pagination, Thumbs } from "swiper";
+import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -136,7 +136,7 @@ const Experience = () => {
             loop={true}
             modules={[Autoplay, Pagination]}
           >
-            {db_skill_front.map(({ avatar, name, review }, index) => {
+            {db_skill_front.map(({ avatar, name }, index) => {
               return (
                 <SwiperSlide key={index} className="testimonial">
                   <div className="client__avatar">
@@ -164,7 +164,7 @@ const Experience = () => {
             loop={true}
             modules={[Autoplay, Pagination]}
           >
-            {db_skill_back.map(({ avatar, name, review }, index) => {
+            {db_skill_back.map(({ avatar, name }, index) => {
               return (
                 <SwiperSlide key={index} className="testimonial">
                   <div className="client__avatar">
@@ -192,7 +192,7 @@ const Experience = () => {
             loop={true}
             modules={[Autoplay, Pagination]}
           >
-            {db_skill_devops.map(({ avatar, name, review }, index) => {
+            {db_skill_devops.map(({ avatar, name }, index) => {
               return (
                 <SwiperSlide key={index} className="testimonial">
                   <div className="client__avatar">
