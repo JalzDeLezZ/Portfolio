@@ -51,17 +51,6 @@ const Contact = () => {
               Send a message
             </a>
           </article>
-          <article className="contact__option">
-            <RiWhatsappLine className="contact__option-icon" />
-            <h4>WhatsApp</h4>
-            <h5>+51 900 284 446</h5>
-            <a
-              target="_blank"
-              href="https://api.whatsapp.com/send?phone=+51900284446"
-            >
-              Send a message
-            </a>
-          </article>
         </div>
         {/*END OF CONTACT OPTIONS*/}
         <form ref={form} onSubmit={sendEmail}>

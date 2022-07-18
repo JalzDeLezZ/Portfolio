@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineHome, AiOutlineUser, AiOutlineBook } from "react-icons/ai";
-import { RiServiceFill, RiMessage3Line } from "react-icons/ri";
+import { RiMessage3Line } from "react-icons/ri";
 import "./styles/nav.scss";
 const Nav = () => {
   const [activeNav, setActiveNav] = useState("#");
@@ -38,17 +38,6 @@ const Nav = () => {
             className={activeNav === "#experience" ? "active" : ""}
           >
             <AiOutlineBook />
-          </a>
-        </li>
-        <li>
-          <a
-            href="#services"
-            onClick={() => {
-              setActiveNav("#services");
-            }}
-            className={activeNav === "#services" ? "active" : ""}
-          >
-            <RiServiceFill />
           </a>
         </li>
         <li>

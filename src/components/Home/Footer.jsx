@@ -30,15 +30,15 @@ const Footer = () => {
           <a href="#contact"> Contact </a>
         </li>
       </ul>
-      <div className="footer__socials">
+      {/* <div className="footer__socials">
         <a href="https://facebook.com"> <FaFacebook/> </a>
         <a href="https://instagram.com"> <FaInstagram/> </a>
-        <a href="https://twitter.com"> <FaTwitter/> </a>
-      </div>
+        <a href="https://twitter.com/JAMESCH42810826"> <FaTwitter/> </a>
+      </div> */}
 
-      <div className="footer__copyright">
-        <small>&copy; EGATOR Tutorials. All rights reserved.</small>
-      </div>
+      <h4 className="footer__copyright">
+        <small>&copy; James Jalz | All rights reserved.</small>
+      </h4>
     </footer>
   );
 };

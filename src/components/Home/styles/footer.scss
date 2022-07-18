@@ -1,6 +1,6 @@
 footer {
     background: var(--color-primary);
-    padding: 3rem 0;
+    padding-top: 3rem;
     text-align: center;
     font-size: 0.9rem;
     margin-top: 7rem;
@@ -48,8 +48,9 @@ footer a {
 }
 
 .footer__copyright {
-    margin-bottom: 4rem;
-    color: var(--color-bg);
+    background-color: black;
+    width: 100%;
+    color: white;
 }
 
 

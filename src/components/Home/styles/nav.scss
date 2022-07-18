@@ -5,9 +5,9 @@ nav {
     padding: 0.7rem 1.7rem;
     z-index: 2;
     position: fixed;
-    left: 50%;
+    right: -74px;
     transform: translateX(-50%);
-    bottom: 2rem;
+    bottom: 4.6%;
     display: flex;
     gap: 0.8rem;
     border-radius: 3rem;
@@ -15,7 +15,7 @@ nav {
 
     ul {
         display: flex;
-
+        gap: 0.7rem;
 
         a {
             background: transparent;
@@ -23,7 +23,7 @@ nav {
             border-radius: 50%;
             display: flex;
             color: var(--color-light);
-            font-size: 1.1rem;
+            font-size: 1.9rem;
         }
 
         a:hover {

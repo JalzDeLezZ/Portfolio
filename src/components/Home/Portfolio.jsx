@@ -1,87 +1,114 @@
-import React from "react";
+import React, { Fragment, useContext } from "react";
+import { AllContext } from "../../Context/store";
 import "./styles/portfolio.scss";
-import IMG1 from "../../assets/portfolio1.jpg";
-import IMG2 from "../../assets/portfolio2.jpg";
-import IMG3 from "../../assets/portfolio3.jpg";
-import IMG4 from "../../assets/portfolio4.jpg";
-import IMG5 from "../../assets/portfolio5.png";
-import IMG6 from "../../assets/portfolio6.jpg";
+import { Portal } from "../../components/Home/Portal";
+import { PortalContent } from "../../components/Home/PortalContent.jsx";
 
-const data = [
-  {
-    id: 1,
-    image: IMG1,
-    title: "Crypto Currency Dashboard & Financial Visualization",
-    github: "https://github.com",
-    demo: "https://dribble.com/Aliens_pixels",
-  },
-  {
-    id: 2,
-    image: IMG2,
-    title: "Crypto Currency Dashboard & Financial Visualization",
-    github: "https://github.com",
-    demo: "https://dribble.com/Aliens_pixels",
-  },
-  {
-    id: 3,
-    image: IMG3,
-    title: "Crypto Currency Dashboard & Financial Visualization",
-    github: "https://github.com",
-    demo: "https://dribble.com/Aliens_pixels",
-  },
-  {
-    id: 4,
-    image: IMG4,
-    title: "Crypto Currency Dashboard & Financial Visualization",
-    github: "https://github.com",
-    demo: "https://dribble.com/Aliens_pixels",
-  },
-  {
-    id: 5,
-    image: IMG5,
-    title: "Crypto Currency Dashboard & Financial Visualization",
-    github: "https://github.com",
-    demo: "https://dribble.com/Aliens_pixels",
-  },
-  {
-    id: 6,
-    image: IMG6,
-    title: "Crypto Currency Dashboard & Financial Visualization",
-    github: "https://github.com",
-    demo: "https://dribble.com/Aliens_pixels",
-  },
-];
+const { DB_Portofolio } = require("./../../assets/data/DB_Portofolio.js");
 
 const Portfolio = () => {
-  return (
-    <section id="portfolio">
-      <h5>My Recent Work</h5>
-      <h2>Portfolio</h2>
+  const {
+    state: { s_modal },
+    xDispatch,
+  } = useContext(AllContext);
 
-      <div className="container portfolio__container">
-        {data.map(({id, image, title, github, demo}) => (
-          <article key={id} className="portfolio__item">
-            <div className="portfolio__item-image">
-              <img src={image} alt={title} />
-            </div>
-            <h3>{title}</h3>
-            <div className="portfolio__item-cta">
-              <a href={github} className="btn" target="_blank">
-                GitHub
-              </a>
-              <a
-                href={demo}
-                className="btn"
-                target="_blank"
-              >
-                Live Demo
-              </a>
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
+  const mShowModal = (pObj) => {
+    xDispatch({ type: "TOGGLE", payload: pObj });
+  };
+
+  return (
+    <Fragment>
+      {!!s_modal ? (
+        <Portal>
+          <PortalContent />
+        </Portal>
+      ) : null}
+
+      <section id="portfolio">
+        <h5>My Recent Work</h5>
+        <h2>Portfolio</h2>
+
+        <div className="container portfolio__container">
+          {DB_Portofolio?.map((pI) => (
+            <article key={pI.id} className="portfolio__item">
+              <div className="portfolio__item-image">
+                <img src={pI.image} alt={pI.title} />
+              </div>
+              <h3>{pI.title}</h3>
+              <div className="portfolio__item-cta">
+                {pI.buttons?.map((pII) => {
+                  switch (pII) {
+                    case "Demo":
+                      return (
+                        <button
+                          type="button"
+                          className="btn liveDemo"
+                          onClick={() => {
+                            mShowModal(pI);
+                          }}
+                        >
+                          Live Demo
+                        </button>
+                      );
+                    case "External":
+                      return (
+                        <a className="btn" href={pI.url} target="_blank">
+                          External Demo
+                        </a>
+                      );
+                    case "Github":
+                      return (
+                        <a href={pI.github} className="btn" target="_blank">
+                          GitHub
+                        </a>
+                      );
+                    case "Deploy":
+                      return (
+                        <a href={pI.deploy} className="btn" target="_blank">
+                          Deploy
+                        </a>
+                      );
+                    default:
+                      return null;
+                  }
+                })}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </Fragment>
   );
 };
 
 export default Portfolio;
+
+/* 
+
+                  switch (pII) {
+                    case "Demo":
+                      <button
+                        type="button"
+                        className="btn liveDemo"
+                        onClick={() => {
+                          mShowModal(pI);
+                        }}
+                      >
+                        Live Demo
+                      </button>;
+                      break;
+                    default:
+                      break;
+
+<a href={github} className="btn" target="_blank">
+                GitHub
+              </a>
+              
+<a
+  href={demo}
+  className="btn"
+  target="_blank"
+>
+  Live Demo
+</a>
+*/

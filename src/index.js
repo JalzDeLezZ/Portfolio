@@ -2,12 +2,13 @@ import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.scss';
 import App from './App';
+import { AllProvider } from './Context/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Fragment>
+  <AllProvider>
     <App />
-  </Fragment>
+  </AllProvider>
 );
 
 /* 
@@ -17,7 +18,7 @@ npm i swiper
 
 $ npm i emailjs-com --save
 npm install @emailjs/browser --save
-
+npm i react-tsparticles
 */
 
 /*
