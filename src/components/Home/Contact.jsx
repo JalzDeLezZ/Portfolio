@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import "./styles/contact.scss";
 import { HiOutlineMail } from "react-icons/hi";
-import { RiMessengerLine, RiWhatsappLine } from "react-icons/ri";
+import { RiMessengerLine } from "react-icons/ri";
 // import emailjs from 'emailjs-com';
 import emailjs from "@emailjs/browser";
 
@@ -39,7 +39,7 @@ const Contact = () => {
             <HiOutlineMail className="contact__option-icon" />
             <h4>Email</h4>
             <h5>j4ko.dele@gmail.com</h5>
-            <a target="_blank" href="mailto:jako.dele@gmail.com">
+            <a rel="noopener noreferrer" target="_blank" href="mailto:jako.dele@gmail.com">
               Send a message
             </a>
           </article>
@@ -47,7 +47,7 @@ const Contact = () => {
             <RiMessengerLine className="contact__option-icon" />
             <h4>Messenger</h4>
             <h5>James Jalz</h5>
-            <a target="_blank" href="https://m.me/Urik.J4LZ.DeLe">
+            <a rel="noopener noreferrer" target="_blank" href="https://m.me/Urik.J4LZ.DeLe">
               Send a message
             </a>
           </article>

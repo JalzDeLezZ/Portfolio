@@ -6,7 +6,7 @@ import CTA from "./CTA";
 
 const HeaderTwo = () => {
   return (
-    <header className="Comp-Header">
+    <header id="iHeader" className="Comp-Header">
       <section className="H-One">
         <article className="One-text">
           <h5>Don't Worry Be Happy, The Life is Very Funny</h5>

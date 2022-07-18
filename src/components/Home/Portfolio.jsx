@@ -29,18 +29,19 @@ const Portfolio = () => {
         <h2>Portfolio</h2>
 
         <div className="container portfolio__container">
-          {DB_Portofolio?.map((pI) => (
-            <article key={pI.id} className="portfolio__item">
+          {DB_Portofolio?.map((pI,i) => (
+            <article key={i} className="portfolio__item">
               <div className="portfolio__item-image">
                 <img src={pI.image} alt={pI.title} />
               </div>
               <h3>{pI.title}</h3>
               <div className="portfolio__item-cta">
-                {pI.buttons?.map((pII) => {
+                {pI.buttons?.map((pII,i) => {
                   switch (pII) {
                     case "Demo":
                       return (
                         <button
+                          key={i}
                           type="button"
                           className="btn liveDemo"
                           onClick={() => {
@@ -52,19 +53,19 @@ const Portfolio = () => {
                       );
                     case "External":
                       return (
-                        <a className="btn" href={pI.url} target="_blank">
+                        <a key={i} className="btn" href={pI.url} target="_blank" rel="noreferrer">
                           External Demo
                         </a>
                       );
                     case "Github":
                       return (
-                        <a href={pI.github} className="btn" target="_blank">
+                        <a key={i} href={pI.github} className="btn" target="_blank" rel="noreferrer">
                           GitHub
                         </a>
                       );
                     case "Deploy":
                       return (
-                        <a href={pI.deploy} className="btn" target="_blank">
+                        <a key={i} href={pI.deploy} className="btn" target="_blank" rel="noreferrer">
                           Deploy
                         </a>
                       );
@@ -82,7 +83,10 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
-
+/* 
+rel="noopener"evita que la nueva página pueda acceder a la window.openerpropiedad y garantiza que se ejecute en un proceso separado.
+rel="noreferrer"tiene el mismo efecto pero también evita que el Refererencabezado se envíe a la nueva página.
+*/
 /* 
 
                   switch (pII) {

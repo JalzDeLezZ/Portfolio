@@ -8,6 +8,7 @@ const FloatingIcon = () => {
         <a
           target="_blank"
           href="https://bit.ly/3nUpuAr"
+          rel="noopener noreferrer"
         >
           <IoLogoWhatsapp className="icon-fixed" />
         </a>

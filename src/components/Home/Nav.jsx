@@ -9,11 +9,11 @@ const Nav = () => {
       <ul>
         <li>
           <a
-            href="#"
+            href="#iHeader"
             onClick={() => {
-              setActiveNav("#");
+              setActiveNav("#iHeader");
             }}
-            className={activeNav === "#" ? "active" : ""}
+            className={activeNav === "#iHeader" ? "active" : ""}
           >
             <AiOutlineHome />
           </a>

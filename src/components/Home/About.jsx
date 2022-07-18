@@ -1,5 +1,4 @@
 import React from "react";
-import ME from "../../assets/Jalz.png";
 import { FaAward, FaUsers, FaRegFolderOpen } from "react-icons/fa";
 import "./styles/about.scss";
 import "./styles/softSkills.scss";
